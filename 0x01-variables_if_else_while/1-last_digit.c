@@ -2,24 +2,24 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- *
- * main: checks the value of last digit of a variable
+ * main - checks the value of last digit of a variable
  *
  * Return: the number to be printed within certain
  * contraints
  */
 int main(void)
 {
-	int n;
+	int n, s;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	
-	if ((n % 10) > 5)
-	       printf("last digit of %d is greater than 5\n", n);
-	else if ((n % 10) > 0 && (n % 10) < 6)
-		printf("last digit of %d is less than 6 and not 0\n", n);
+	s = n % 10;
+
+	if (s > 5)
+		printf("last digit of %d is %d and is greater than 5\n", n, s);
+	else if (s != 0 && s < 6)
+		printf("last digit of %d is %d and is less than 6 and not 0\n", n, s);
 	else
-		printf("last digit of %d is 0\n", n);
+		printf("last digit of %d is %d and is 0\n", n, s);
 	return (0);
 }
