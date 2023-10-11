@@ -7,8 +7,9 @@
 void get_string(void)
 {
 	char str[] = "_putchar";
+	int i;
 
-	for (int i = 0; str[i]; i++)
+	for (i = 0; str[i]; i++)
 	{
 		_putchar(str[i]);
 	}
