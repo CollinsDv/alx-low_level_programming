@@ -32,9 +32,9 @@ void fizz_buzz(void)
 		else
 			printf("%d ", x);
 
-		if (num == 100)
+		if (x == 100)
 			continue;
-		printf(" ")
+		printf(" ");
 	}
 	printf("\n");
 }
