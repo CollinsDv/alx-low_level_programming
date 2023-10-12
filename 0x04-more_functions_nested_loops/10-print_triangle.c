@@ -8,18 +8,23 @@
  */
 void print_triangle(int size)
 {
-	int row, space, hash;
-
-	for (row = 1; row <= size; row++)
+	if (size > 0)
 	{
-		for (space = 1; space < size - row; space++)
+		int row, space, hash;
+
+		for (row = 1; row <= size; row++)
 		{
-			printf(" ");
+			for (space = 1; space < size - row; space++)
+			{
+				_putchar(' ');
+			}
+			for (hash = 1; hash <= row; hash++)
+			{
+				_putchar('#');
+			}
+			_putchar('\n');
 		}
-		for (hash = 1; hash <= row; hash++)
-		{
-			printf("#");
-		}
-		printf("\n");
 	}
+	else
+		_putchar('\n');
 }
