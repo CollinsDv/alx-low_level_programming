@@ -1,4 +1,4 @@
-#include "main.c"
+#include "main.h"
 
 /**
  * print_numbers - print digit 1 -10 in ASCII value
