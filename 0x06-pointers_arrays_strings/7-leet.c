@@ -7,13 +7,15 @@
 
 char *leet(char *str)
 {
+	int i, j;
+
 	char *letters = "AEOTLaeotl";
 
 	char *replacements = "4307143071";
 
-	for (int i = 0; str[i]; i++)
+	for (i = 0; str[i]; i++)
 	{
-		for (int j = 0; letters[j]; j++)
+		for (j = 0; letters[j]; j++)
 		{
 			if (str[i] == letters[j])
 			{
