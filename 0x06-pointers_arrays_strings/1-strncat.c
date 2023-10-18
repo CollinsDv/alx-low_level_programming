@@ -27,9 +27,10 @@ char *_strncat(char *dest, char *src, int n)
 		*dest = *src;
 		ptr++;
 		src++;
+		i++;
 	}
 	if (i < n)
-		*dest = '\0';
+		*ptr = '\0';
 
-	return (ptr);
+	return (dest);
 }
