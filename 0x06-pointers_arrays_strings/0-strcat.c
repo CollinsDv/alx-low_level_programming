@@ -24,6 +24,6 @@ char *_strcat(char *dest, char *src)
 		ptr++;
 		src++;
 	}
-	*dest = '\0';
+	*ptr = '\0';
 	return (ptr);
 }
