@@ -323,7 +323,7 @@ PPPPPPPP
 RKBQKBKR
 julien@ubuntu:~/0x07$
 ```
-# `7-print_chessboard.c`
+# `8-print_diagsums.c`
 Write a function that prints the sum of the two diagonals of a square matrix of integers.
 
 * Prototype: void print_diagsums(int *a, int size);
@@ -365,7 +365,7 @@ julien@ubuntu:~/0x07$ ./8-print_diagsums
 julien@ubuntu:~/0x07$ 
 ```
 
-# `8-print_diagsums.c`
+# `100-set_string.c`
 
 Write a function that sets the value of a pointer to a char.
 
