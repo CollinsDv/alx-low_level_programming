@@ -1,6 +1,6 @@
 # EVEN MORE POINTERS, ARRAYS AND STRINGS  
 0. We assimilate the function **memset** where we copy n bites of source characters to the destination array.
-1.```
+```
    julien@ubuntu:~/0x07$ cat 0-main.c
 #include "main.h"
 #include <stdio.h>
@@ -72,6 +72,6 @@ julien@ubuntu:~/0x07$ ./0-memset
 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01
 0x01 0x01 0x01 0x01 0x01 0x00 0x00 0x00
 julien@ubuntu:~/0x07$ 
-   ```  
+ ```
 2. `memcpy` - we copy elements of size n from src to dest.
 3.     
