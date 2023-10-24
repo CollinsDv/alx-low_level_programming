@@ -151,7 +151,7 @@ julien@ubuntu:~/0x07$ ./1-memcpy
 julien@ubuntu:~/0x07$ 
 ```
 ## `2-strchr.c`
-We iterate an array dest and see the first occurrence of a character in it. An address of the index containing the character in **dest** is returned
+We iterate an array s and see the first occurrence of a character ***f** in it. An address of the index containing the character in **dest** is returned
 ```
 julien@ubuntu:~/0x07$ cat 2-main.c
 #include "main.h"
