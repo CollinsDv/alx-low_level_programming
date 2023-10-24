@@ -247,6 +247,7 @@ julien@ubuntu:~/0x07$ ./4-strpbrk
 llo, world
 julien@ubuntu:~/0x07$ 
 ```
+
 # `5-strstr.c`
 Write a function that locates a substring.
 
@@ -363,6 +364,7 @@ julien@ubuntu:~/0x07$ ./8-print_diagsums
 1214556093, 1137318
 julien@ubuntu:~/0x07$ 
 ```
+
 # `8-print_diagsums.c`
 
 Write a function that sets the value of a pointer to a char.
