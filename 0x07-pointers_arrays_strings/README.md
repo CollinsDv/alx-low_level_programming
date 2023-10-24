@@ -1,5 +1,6 @@
 # EVEN MORE POINTERS, ARRAYS AND STRINGS  
-0. We assimilate the function **memset** where we copy n bites of source characters to the destination array.
+## `0-memset.c`
+We assimilate the function **memset** where we copy n bites of source characters to the destination array.
 ```
    julien@ubuntu:~/0x07$ cat 0-main.c
 #include "main.h"
