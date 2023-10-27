@@ -3,4 +3,4 @@
 find . -name '*.c' -exec gcc -c -Wall -Werror -Wextra {} +
 
 # Create a static library named liball.a from the generated .o files
-ar -rcs liball.a '*.o'
+ar -rcs liball.a *.o
