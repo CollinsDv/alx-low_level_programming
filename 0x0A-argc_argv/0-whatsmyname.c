@@ -5,14 +5,19 @@
  *
  * Return: 0
  */
-int main(void)
+int main(int argc, char *argv[])
 {
-	char *programFile = __FILE__; /*macro housing program name and path*/
+	int i = 0;
+	char *ptr;
 
-	while (*programFile != '\0')
+	for(; i < argc; i++)
 	{
-		_putchar(*programFile);
-		programFile++;
+		ptr = argv[i];
+		while (*ptr != '\0')
+		{
+			_putchar(*ptr);
+			ptr++;
+		}
 	}
 	_putchar('\n');
 	return (0);
