@@ -16,7 +16,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	printf("index[0] is %s\n", argv[0]);
 
 	multiply = 1;
 	i = 1;
@@ -25,6 +24,6 @@ int main(int argc, char *argv[])
 		multiply *= atoi(argv[i]);
 		i++;
 	}
-	printf("product is %d\n", multiply);
+	printf("%d\n", multiply);
 	return (0);
 }
