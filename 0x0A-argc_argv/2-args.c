@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
 	while (i < argc)
 	{
-		printf("value at index[%d] is %s\n", i, argv[i]);
+		printf("%s\n", argv[i]);
 		i++;
 	}
 	return (0);
