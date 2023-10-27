@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	char *programFile = __FILE__; /*__FILE__ is a macro housing name of source file program and its path*/
+	char *programFile = __FILE__; /*macro housing program name and path*/
 
 	while (*programFile != '\0')
 		_putchar(*programFile);
