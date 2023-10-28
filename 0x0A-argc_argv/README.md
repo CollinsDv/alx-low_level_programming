@@ -1,5 +1,5 @@
 # `C - argc and argv
-## This was an exercise to practice on the use main with the default parameter arguments
+**This was an exercise to practice on the use main with the default parameter arguments.**
 
 ### `0-whatsmyname.c` -  *This prints the name of a program that is being executed. It is usually the value in the **argv[0]** index.*  
 ### `1-args.c` -
