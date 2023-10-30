@@ -10,7 +10,7 @@
  */
 char *_strdup(char *str)
 {
-	int i;
+	int i, len;
 	char *strarray;
 
 	/*check if string is empty or NULL*/
@@ -18,7 +18,7 @@ char *_strdup(char *str)
 		return (NULL);
 
 	/*declared after above to prevent segmentation error*/
-	int len = strlen(str);
+	len = strlen(str);
 
 	strarray = (char *)malloc((len + 1) * sizeof(char));
 
