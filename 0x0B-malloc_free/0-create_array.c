@@ -18,14 +18,14 @@ char *create_array(unsigned int size, char c)
 		return (NULL);
 
 	pointer = (char *)malloc(size * sizeof(char));
+	if (*pointer == '\0') /*memory allocation validation*/
+		return NULL;
+
 	i = 0;
 	while (i < size)
 	{
 		pointer[i] = c;
 		i++;
 	}
-	if (*pointer == '\0')
-		return (NULL);
-	/*free(pointer);*/
 	return (pointer);
 }
