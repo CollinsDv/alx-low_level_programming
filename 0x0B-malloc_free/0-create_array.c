@@ -13,6 +13,7 @@ char *create_array(unsigned int size, char c)
 {
 	char *pointer;
 	unsigned int i;
+
 	if (size == 0)
 		return (NULL);
 
@@ -23,6 +24,6 @@ char *create_array(unsigned int size, char c)
 		pointer[i] = c;
 		i++;
 	}
-	free(pointer);
+	/*free(pointer);*/
 	return (pointer);
 }
