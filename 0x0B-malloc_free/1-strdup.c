@@ -12,11 +12,13 @@ char *_strdup(char *str)
 {
 	int i;
 	char *strarray;
-	int len = strlen(str);
 
 	/*check if string is empty or NULL*/
-	if (*str == '\0' || str == NULL)
+	if (str == NULL)
 		return (NULL);
+
+	/*declared after above to prevent segmentation error*/
+	int len = strlen(str);
 
 	strarray = (char *)malloc((len + 1) * sizeof(char));
 
