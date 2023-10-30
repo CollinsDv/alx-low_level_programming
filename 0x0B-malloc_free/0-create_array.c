@@ -24,6 +24,8 @@ char *create_array(unsigned int size, char c)
 		pointer[i] = c;
 		i++;
 	}
+	if (*pointer == '\0')
+		return (NULL);
 	/*free(pointer);*/
 	return (pointer);
 }
