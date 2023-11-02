@@ -1,7 +1,8 @@
 # `MORE MALLOC, FREE EXERCISES`  
 Contains additional exercises to boost knowledge in dynamic memory allocation  
 
-0-malloc_checked.c : function that allocates memory using malloc  
+`0-malloc_checked.c` 
+function that allocates memory using malloc  
 * Prototype: void *malloc_checked(unsigned int b);
 * Returns a pointer to the allocated memory
 * if malloc fails, the malloc_checked function should cause normal process termination with a status value of 98
@@ -45,5 +46,7 @@ julien@ubuntu:~/0x0b. more malloc, free$ ./a
 0x7f31f6c19010
 julien@ubuntu:~/0x0b. more malloc, free$ echo $?
 98
-julien@ubuntu:~/0x0b. more malloc, free$ 
+julien@ubuntu:~/0x0b. more malloc, free$
+
+
 ```
