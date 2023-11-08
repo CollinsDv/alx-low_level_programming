@@ -1,4 +1,6 @@
 #include "function_pointers.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * int_index - finds the index of the 1st occurrence
@@ -12,6 +14,9 @@
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i, bool_val, count;
+
+	if (array == NULL || cmp == NULL)
+                return(0);
 
 	if (size <= 0)
 		return (-1);
