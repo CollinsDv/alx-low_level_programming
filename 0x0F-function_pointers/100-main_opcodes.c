@@ -1,39 +1,41 @@
-#include <stdio.h>
+#include "function_pointers.h"
 #include <stdlib.h>
-#include <udis86.h>
+#include <stdio.h>
 
 /**
-  * main - prints the opcodes of its own main function.
-  * @argc: total number of arguements
-  * @argv: array of pointers to the arguements
-  *
-  * Return: 0 or 2
-  */
-int main(int argc, char *argv[])
+ * main - function that create Opcode
+ *
+ * @argc: the number of arguements
+ * @argv: argument vector
+ * Return: Error or 0
+ */
+int main(int argc, char **argv)
 {
-	ud_t ud_obj;
-	int val = 0, i = 0;
 
-	if (argc == 2)
+	int i;
+
+	/*  Correct # of args  */
+	if (argc != 2)
 	{
-		val = atoi(argv[1]);
-
-		if (val < 0)
-		{
-			printf("Error\n");
-			exit(2);
-		}
-
-		ud_unit(&ud_obj);
-		ud_set_input_buffer(&ud_obj, argv[1], val);
-		ud_set_mode(&ud_obj, 64);
-		ud_set_syntax(&ud_obj, UD_SYN_INTEL);
-
-		while (ud_disassemble(&ud_obj))
-		{
-			printf("\t%s\n", ud_insn_hex(&ud_obj));
-		}
+		printf("Error\n");
+		exit(1);
 	}
+
+	/*  Are bytes less than 0  */
+	if (atoi(argv[1]) < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
+
+	while (i < atoi(argv[1]))
+	{
+		printf("%02x", *((unsigned char *)main + i));
+		i++;
+		if (i < atoi(argv[1]))
+			putchar(' ');
+	}
+	putchar('\n');
 
 	return (0);
 }
