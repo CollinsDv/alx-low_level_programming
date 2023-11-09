@@ -8,14 +8,17 @@
  */
 void print_all(const char * const format, ...)
 {
-	int i;
+	int i, separator;
 	va_list args;
 	char *string;
 
 	va_start(args, format);
 	i = 0;
+	separator = 0;
 	while (format[i] != '\0')
 	{
+		if (separator)
+			printf(", ");
 		if (format[i] == 'i')
 			printf("%d", va_arg(args, int));
 		else if (format[i] == 'f')
@@ -25,9 +28,13 @@ void print_all(const char * const format, ...)
 		else if (format[i] == 's')
 		{
 			string = va_arg(args, char *);
+			if (string == NULL)
+				printf("(nil)");
 			printf("%s", string);
 		}
 		i++;
 	}
+	printf("\n");
+
 	va_end(args);
 }
