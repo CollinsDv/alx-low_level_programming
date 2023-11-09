@@ -1,6 +1,11 @@
 #include <stdarg.h>
 #include <stdio.h>
 
+/**
+ * print_numbers - prints number function
+ * @separator: separates elements
+ * @n: number of variadric args
+ */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i, elem;
