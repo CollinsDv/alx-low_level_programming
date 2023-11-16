@@ -6,6 +6,7 @@
  * print_strings - print a strings
  * @separator: separator element(s)
  * @n: number of variadic strings
+ * Return: void
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
