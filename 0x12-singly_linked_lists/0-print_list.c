@@ -1,19 +1,5 @@
 #include "lists.h"
-#include <stddef.h>
 #include <stdio.h>
-
-/**
- * list_s - structure data type
- * @str: string
- * @len: string len
- * @next: pointer to next node
- */
-typedef struct list_s
-{
-    char *str;
-    unsigned int len;
-    struct list_s *next;
-} list_t;
 
 /**
  * print_list - prints all elements in a linked list
