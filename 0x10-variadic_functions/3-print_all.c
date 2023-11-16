@@ -8,33 +8,44 @@
  */
 void print_all(const char * const format, ...)
 {
-	int i, separator;
-	va_list args;
-	char *string;
+	char *str;
+	unsigned int i = 0, commaCheck = 0;
+	va_list ap;
 
-	va_start(args, format);
-	i = 0;
-	separator = 0;
-	while (format[i] != '\0')
+	va_start(ap, format);
+
+	while (format && format[i])
 	{
-		if (separator)
+		if (commaCheck)
 			printf(", ");
-		if (format[i] == 'i')
-			printf("%d", va_arg(args, int));
-		else if (format[i] == 'f')
-			printf("%f", va_arg(args, double));
-		else if (format[i] == 'c')
-			printf("%c", va_arg(args, int));
-		else if (format[i] == 's')
-		{
-			string = va_arg(args, char *);
-			if (string == NULL)
-				printf("(nil)");
-			printf("%s", string);
-		}
-		i++;
-	}
-	printf("\n");
 
-	va_end(args);
+		switch (format[i])
+		{
+		case 'c':
+			printf("%c", va_arg(ap, int));
+			break;
+		case 'i':
+			printf("%i", va_arg(ap, int));
+			break;
+		case 'f':
+			printf("%f", va_arg(ap, double));
+			break;
+		case 's':
+			str = va_arg(ap, char*);
+			if (str)
+			{
+				printf("%s", str);
+				break;
+			}
+			printf("(nil)");
+			break;
+		default:
+			commaCheck = 0;
+			i++;
+			continue;
+		}
+		commaCheck = 1,	i++;
+	}
+	putchar('\n');
+	va_end(ap);
 }
