@@ -11,12 +11,12 @@ int sum_listint(listint_t *head)
 {
 	listint_t *temp;
 	unsigned int sum;
-	
+
 	temp = NULL;
 
 	if (head == NULL)
 		return (0);
-	
+
 	temp = head;
 	sum = 0;
 	while (temp)
