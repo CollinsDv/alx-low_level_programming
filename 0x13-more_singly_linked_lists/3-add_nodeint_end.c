@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_nodeint - returns a pointer to beginning of the updated list
+ * add_nodeint_end - returns a pointer to beginning of the updated list
  *
  * @head: pointer to list to be updated
  * @n: data to input into new node

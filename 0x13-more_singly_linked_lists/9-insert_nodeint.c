@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * insert_nodeint-at_index - returns the nth node pointer
+ * insert_nodeint_at_index - returns the nth node pointer
  * @head: pointer to head node
  * @idx: index to add node in
  * @n: data to input into node member(n)
@@ -10,11 +10,8 @@
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *temp, *new_node;
+	listint_t *temp = NULL, *new_node = NULL;
 	unsigned int i;
-
-	temp = NULL;
-	new_node = NULL;
 
 	if (head == NULL)
 		return (NULL);
@@ -30,6 +27,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	i = 0;
 	if (temp == NULL)
 		*head = new_node;
+	else if (idx == 0)
+	{
+		new_node->next = temp;
+		*head = new_node;
+	}
 	else
 	{
 		while (i < idx)
@@ -40,10 +42,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		}
 		if (temp->next == NULL)
 			temp->next = new_node;
-
-		new_node->next = temp->next;
-		temp->next = new_node;
+		else
+		{
+			new_node->next = temp->next;
+			temp->next = new_node;
+		}
 	}
-
 	return (*head);
 }

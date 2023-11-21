@@ -3,7 +3,7 @@
 /**
  * free_listint2 - frees a pointer to a linked list listint_t
  *
- * @head - pointer to a head node
+ * @head: pointer to a head node
  */
 void free_listint2(listint_t **head)
 {
