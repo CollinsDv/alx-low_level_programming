@@ -11,9 +11,11 @@ int pop_listint(listint_t **head)
 	int data;
 	/*assign a temporary node*/
 	listint_t *temp;
+
+	temp = NULL;
 	/*check of head node is empty*/
 	if (head == NULL || *head == NULL)
-		return(-1);
+		return(0);
 
 	/*set temp to point to 2nd node after head*/
 	temp = (*head)->next;
