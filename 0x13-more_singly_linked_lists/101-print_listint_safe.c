@@ -28,7 +28,7 @@ size_t print_listint_safe(const listint_t *head)
 		if (slow == fast)
 		{
 			printf("-> [%p] %d\n", (void *)slow, slow->n);
-			return (count_new);
+			return (nodes);
 		}
 	}
 	while (slow != NULL)
