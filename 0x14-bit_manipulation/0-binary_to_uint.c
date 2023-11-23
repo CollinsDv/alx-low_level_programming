@@ -13,14 +13,17 @@
  */
 unsigned int binary_to_uint_rec(const char *b, int placevalue, int len)
 {
-	unsigned int num;
+	unsigned int num, index;
 
-	if (b[0] == '\0')
+	if (len < 1)
 		return (0);
-	else if (b[len] != 0 && b[len] != 1)
+
+	index = len - 1;
+
+	if (b[index] != '0' && b[index] != '1')
 		return (0);
-	num = b[len - '0'] * placevalue +
-		binary_to_uint_rec((b + 1), placevalue * 2, len - 1);
+	num = (b[index] - '0') * placevalue +
+		binary_to_uint_rec(b, placevalue * 2, len - 1);
 	return (num);
 }
 
@@ -33,7 +36,8 @@ unsigned int binary_to_uint_rec(const char *b, int placevalue, int len)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int len, num;
+	unsigned int num;
+	int len;
 
 	if (b == NULL)
 		return (0);
@@ -42,6 +46,6 @@ unsigned int binary_to_uint(const char *b)
 	if (len == 0)
 		return (0);
 
-	num = binary_to_uint_rec(b, 1, len - 1);
+	num = binary_to_uint_rec(b, 1, len);
 	return (num);
 }
