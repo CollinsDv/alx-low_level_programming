@@ -17,7 +17,7 @@ unsigned int binary_to_uint_rec(const char *b, int placevalue, int len)
 
 	if (b[0] == '\0')
 		return (0);
-	else if (b[len] != 0 && b[1] != 1)
+	else if (b[len] != 0 && b[len] != 1)
 		return (0);
 	num = b[len - '0'] * placevalue +
 		binary_to_uint_rec((b + 1), placevalue * 2, len - 1);
