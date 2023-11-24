@@ -10,6 +10,6 @@ int get_endianness(void)
 	int mask = 1;
 
 	if (2 & mask)
-		return (1);
-	return (0);
+		return (0);
+	return (1);
 }
