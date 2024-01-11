@@ -12,11 +12,6 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	dlistint_t *new_node = malloc(sizeof(*new_node));
 
-	if (head == NULL)
-	{
-		dprintf(2, "NULL double pointer");
-		exit(EXIT_FAILURE);
-	}
 	if (new_node == NULL)
 	{
 		dprintf(2, "MALLOC ERROR\n");
