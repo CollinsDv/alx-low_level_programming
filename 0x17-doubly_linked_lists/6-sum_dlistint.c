@@ -5,7 +5,7 @@
  *
  * @head: head of the linked list
  *
- * @Return: sum
+ * Return: sum
  */
 int sum_dlistint(dlistint_t *head)
 {
