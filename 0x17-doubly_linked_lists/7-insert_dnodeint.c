@@ -11,17 +11,17 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *temp = *h, *new_node; 
+	dlistint_t *temp = *h, *new_node;
 	unsigned int count = 0, size = dlistint_len(*h);
 
-	if (idx > size - 1 || h == NULL)
+	if (idx > size - 1)
 		return (NULL);
 
 	new_node = malloc(sizeof(*new_node));
 	if (new_node == NULL)
 	{
 		dprintf(2, "ERROR: malloc error\n");
-		return NULL;
+		return (NULL);
 	}
 	new_node->n = n;
 	while (count < idx)
