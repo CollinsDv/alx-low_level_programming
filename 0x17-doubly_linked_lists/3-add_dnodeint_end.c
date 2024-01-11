@@ -10,8 +10,8 @@
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	
 	dlistint_t *temp = NULL, *new_node = malloc(sizeof(*new_node));
+
 	if (new_node == NULL)
 	{
 		dprintf(2, "ERROR: can't malloc");
@@ -23,7 +23,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	if (*head == NULL)
 	{
 		new_node->prev = NULL;
-		*head = new_node; 
+		*head = new_node;
 	}
 	/* handle a populated list */
 	else
