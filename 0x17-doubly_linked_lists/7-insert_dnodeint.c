@@ -11,45 +11,41 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *temp = *h, *new_node;
+	dlistint_t *temp = *h, *new_node = malloc(sizeof(*new_node));
 	unsigned int count = 0, size = dlistint_len(*h);
 
-	if (idx > size - 1)
+	if (idx < 0 || idx > size - 1 || h == NULL || new_node == NULL)
 		return (NULL);
 
-	new_node = malloc(sizeof(*new_node));
-	if (new_node == NULL)
-	{
-		dprintf(2, "ERROR: malloc error\n");
-		return (NULL);
-	}
 	new_node->n = n;
 	while (count < idx)
 	{
 		temp = temp->next;
 		count++;
 	}
-	if (temp->prev == NULL)
+	if (temp->prev == NULL) /* add node as head node */
 	{
-		new_node->next = *h;
+		new_node->next = temp;
 		new_node->prev = NULL;
 		if (temp != NULL)
-			(*h)->prev = new_node;
+			temp->prev = new_node;
 		*h = new_node;
+		return (temp);
 	}
-	else if (temp->next == NULL)
+	else if (temp->next == NULL) /* add node as tail node */
 	{
 		new_node->next = NULL;
 		new_node->prev = temp;
 		temp->next = new_node;
+		return (temp->next);
 	}
 	else
 	{
 		new_node->next = temp;
 		temp->prev->next = new_node;
 		temp->prev = new_node;
+		return (temp->prev);
 	}
-	return (new_node);
 }
 
 /**
