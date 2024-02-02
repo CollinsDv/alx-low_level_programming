@@ -1,4 +1,5 @@
 #include "hash_tables.h"
+#include <string.h>
 
 /**
  * hash_table_set - inserts an element into a hash table
@@ -27,7 +28,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			free(current->value);
 			current->value = strdup(value);
-			return (EXIT_SUCCESS);
+			return (1);
 		}
 		current = current->next;
 	}
@@ -36,7 +37,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	new->next = ht->array[index];
 	ht->array[index] = new;
-	return (EXIT_SUCCESS);
+	return (1);
 }
 
 /**
@@ -50,13 +51,27 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 hash_node_t *create_hash_node(const char *key, const char *value)
 {
 	hash_node_t *hash_node = malloc(sizeof(*hash_node));
+
 	if (hash_node == NULL)
 	{
 		dprintf(2, "malloc error\n");
 		exit(EXIT_FAILURE);
 	}
 	hash_node->key = strdup(key);
+	if (hash_node->key == NULL)
+	{
+		perror("strdup error for key");
+		free(hash_node);
+		exit(EXIT_FAILURE);
+	}
 	hash_node->value = strdup(value);
+	if (hash_node->value == NULL)
+	{
+		perror("strdup error for value");
+		free(hash_node->key);
+		free(hash_node);
+		exit(EXIT_FAILURE);
+	}
 	hash_node->next = NULL;
 
 	return (hash_node);
