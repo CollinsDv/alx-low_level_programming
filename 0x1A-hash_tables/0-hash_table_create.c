@@ -4,15 +4,15 @@
  * hash_table_create - creates a hash table and the hash_node pointers
  *
  * @size: size of the hash_table
- * 
- * @Return: A new hash_table or NULL on failure
+ *
+ * Return: A new hash_table or NULL on failure
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	unsigned long int i;
-
 	/* create a hash_table pointer */
 	hash_table_t *hash_table = malloc(sizeof(*hash_table));
+
 	if (hash_table == NULL)
 	{
 		dprintf(2, "malloc error\n");
