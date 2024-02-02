@@ -11,42 +11,39 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-        dlistint_t *temp = *h, *new_node = malloc(sizeof(*new_node));
-        unsigned int count = 0, size = dlistint_len(*h);
+	dlistint_t *temp = *h, *new_node = malloc(sizeof(*new_node));
+	unsigned int count = 0, size = dlistint_len(*h);
 
-        if (idx > size - 1 || h == NULL || new_node == NULL)
-                return (NULL);
+	if (idx > size - 1 || h == NULL || new_node == NULL)
+		return (NULL);
 
-        new_node->n = n;
-        while (count < idx)
-        {
-                temp = temp->next;
-                count++;
-        }
-        if (temp->prev == NULL) /* add node as head node */
-        {
-                new_node->next = temp;
-                new_node->prev = NULL;
-                if (temp != NULL)
-                        temp->prev = new_node;
-                *h = new_node;
-                /*return (temp);*/
-        }
-        else if (temp->next == NULL) /* add node as tail node */
-        {
-                new_node->next = NULL;
-                new_node->prev = temp;
-                temp->next = new_node;
-                /*return (new_node);*/
-        }
-        else
-        {
-                new_node->next = temp;
-                temp->prev->next = new_node;
-                temp->prev = new_node;
-                /* return (temp->prev);*/
-        }
-        return (new_node);
+	new_node->n = n;
+	while (count < idx)
+	{
+		temp = temp->next;
+		count++;
+	}
+	if (temp->prev == NULL) /* add node as head node */
+	{
+		new_node->next = temp;
+		new_node->prev = NULL;
+		if (temp != NULL)
+			temp->prev = new_node;
+		*h = new_node;
+	}
+	else if (temp->next == NULL) /* add node as tail node */
+	{
+		new_node->next = NULL;
+		new_node->prev = temp;
+		temp->next = new_node;
+	}
+	else
+	{
+		new_node->next = temp;
+		temp->prev->next = new_node;
+		temp->prev = new_node;
+	}
+	return (new_node);
 }
 
 /**
@@ -58,17 +55,17 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
  */
 size_t dlistint_len(const dlistint_t *h)
 {
-        const dlistint_t *temp = NULL;
-        size_t nodes = 0;
+	const dlistint_t *temp = NULL;
+	size_t nodes = 0;
 
-        if (!h)
-                return (0);
+	if (!h)
+		return (0);
 
-        temp = h;
-        while (temp)
-        {
-                nodes++;
-                temp = temp->next;
-        }
-        return (nodes);
+	temp = h;
+	while (temp)
+	{
+		nodes++;
+		temp = temp->next;
+	}
+	return (nodes);
 }
