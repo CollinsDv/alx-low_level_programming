@@ -10,12 +10,7 @@
  */
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-	unsigned long int index = hash_djb2(key);
+	unsigned long int hash = hash_djb2(key);
 
-	if (index > size)
-	{
-		dprintf(2, "index out of range\n");
-		exit(EXIT_FAILURE);
-	}
-	return (index);
+	return (hash % size);
 }
